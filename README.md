@@ -114,6 +114,49 @@ Then open:
 - Frontend: `http://localhost:5173`
 - Backend health check: `http://localhost:4000/api/health`
 
+## 5C. Deploy On aaPanel / Hosting Panel
+
+For a server panel like the one in your screenshot, use Docker deployment instead of the PHP project wizard.
+
+Recommended setup:
+
+- Domain: `atas.arsoft.io`
+- Frontend container: exposed only on `127.0.0.1:8080`
+- Backend container: exposed only on `127.0.0.1:4000`
+- Reverse proxy:
+  - `/` -> `http://127.0.0.1:8080`
+  - `/api` -> `http://127.0.0.1:4000/api`
+
+Use [docker-compose.prod.yml](/d:/websites/atas/docker-compose.prod.yml:1) for production.
+
+Suggested server steps:
+
+1. Point the domain A record to your server IP.
+2. Clone the repo on the server:
+
+```bash
+git clone https://github.com/AROSOFTio/ATAS.git
+cd ATAS
+```
+
+3. Create `.env` with your real Supabase and Gemini keys.
+4. Start the app:
+
+```bash
+docker compose -f docker-compose.prod.yml up -d --build
+```
+
+5. In the hosting panel:
+   - create the site `atas.arsoft.io`
+   - keep SSL enabled
+   - do not use PHP for the app runtime
+   - add reverse proxy `/` -> `127.0.0.1:8080`
+   - add reverse proxy `/api` -> `127.0.0.1:4000/api`
+
+6. Test:
+   - `https://atas.arsoft.io`
+   - `https://atas.arsoft.io/api/health`
+
 ## 6. Upload a Timetable
 
 Frontend flow:
