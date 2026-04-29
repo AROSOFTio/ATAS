@@ -16,10 +16,16 @@ export async function apiRequest<T>(path: string, options?: RequestInit): Promis
   }
 
   let data: unknown = null;
+  let textBody = "";
 
   try {
     data = await response.json();
   } catch {
+    try {
+      textBody = await response.text();
+    } catch {
+      textBody = "";
+    }
     data = null;
   }
 
@@ -27,7 +33,9 @@ export async function apiRequest<T>(path: string, options?: RequestInit): Promis
     const errorMessage =
       typeof data === "object" && data !== null && "error" in data && typeof data.error === "string"
         ? data.error
-        : "Request failed.";
+        : textBody.trim()
+          ? `HTTP ${response.status}: ${textBody.trim().slice(0, 220)}`
+          : `HTTP ${response.status}: Request failed.`;
 
     throw new Error(errorMessage);
   }
@@ -36,4 +44,3 @@ export async function apiRequest<T>(path: string, options?: RequestInit): Promis
 }
 
 export { API_BASE_URL };
-
