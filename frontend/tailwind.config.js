@@ -10,10 +10,9 @@ export default {
         glow: "#fed766"
       },
       boxShadow: {
-        panel: "0 20px 60px rgba(8, 17, 31, 0.35)"
+        panel: "0 20px 60px rgba(0, 0, 0, 0.32)"
       }
     }
   },
   plugins: []
 };
-

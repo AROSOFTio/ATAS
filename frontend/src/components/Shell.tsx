@@ -11,9 +11,9 @@ const navItems = [
 
 export function Shell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen text-[#f4efe2]">
+    <div className="min-h-screen bg-transparent text-[#f4efe2]">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-5 md:px-8 md:py-7">
-        <header className="rounded-[2.25rem] border border-[#aa8502]/25 bg-[#1a1a1a]/92 p-6 shadow-panel backdrop-blur md:p-7">
+        <header className="rounded-[2.25rem] border border-[#aa8502]/25 bg-[#1d1d1d] p-6 shadow-panel backdrop-blur md:p-7">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.35em] text-[#aa8502]">Timetable Advisory</p>

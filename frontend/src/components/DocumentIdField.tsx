@@ -6,8 +6,7 @@ type Props = {
 export function DocumentIdField({ value, onChange }: Props) {
   return (
     <label className="block">
-      <span className="mb-2 block text-sm text-slate-300">Document ID</span>
-      
+      <span className="mb-2 block text-sm text-[#d0d0d0]">Document ID</span>
       <input
         value={value}
         onChange={(event) => onChange(event.target.value)}

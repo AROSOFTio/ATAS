@@ -4,11 +4,17 @@
 
 :root {
   color: #f4efe2;
+  color-scheme: dark;
   background:
-    radial-gradient(circle at top left, rgba(170, 133, 2, 0.16), transparent 24%),
-    radial-gradient(circle at top right, rgba(170, 133, 2, 0.12), transparent 26%),
-    linear-gradient(180deg, #121212 0%, #1b1b1b 48%, #232323 100%);
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(170, 133, 2, 0.08), transparent 24%),
+    linear-gradient(180deg, #151515 0%, #1b1b1b 46%, #242424 100%);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  min-height: 100%;
+  background: #181818;
 }
 
 body {

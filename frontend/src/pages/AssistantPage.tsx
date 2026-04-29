@@ -61,7 +61,7 @@ export function AssistantPage() {
         <form onSubmit={submit} className="grid gap-4">
           <DocumentIdField value={documentId} onChange={setDocumentId} />
           <label className="block">
-            <span className="mb-2 block text-sm text-slate-300">Question</span>
+            <span className="mb-2 block text-sm text-[#d0d0d0]">Question</span>
             <textarea
               value={question}
               onChange={(event) => setQuestion(event.target.value)}
