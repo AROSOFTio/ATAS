@@ -20,7 +20,7 @@ export function Shell({ children }: { children: ReactNode }) {
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white md:text-4xl">AI Timetable System</h1>
             </div>
             <div className="rounded-full border border-[#aa8502]/30 bg-[#aa8502]/12 px-4 py-2 text-sm text-[#f3d67d]">
-              Local MVP
+              Live
             </div>
           </div>
 
